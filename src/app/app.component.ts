@@ -15,4 +15,6 @@ export class AppComponent {
   d: Date = new Date();
 
   d1: string = new Date().toLocaleString();
+
+  
 }
