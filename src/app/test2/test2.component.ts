@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test2.component.css']
 })
 export class Test2Component implements OnInit {
-
+count: number = 0;
+firstName: string = 'Rohit';
   constructor() { }
 
   ngOnInit() {
   }
+  onSave(){
+    let counts = this.count +=1;
+    console.log(counts);
+    
+  }
 
+  onKeyUp(value) {
+    console.log('$event', value.target.value)
+  }
 }
