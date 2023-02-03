@@ -1,1 +1,12 @@
-<p>test2 works!</p>
+<button (click)="onSave()">Save</button>
+
+count is: {{count}} <br><br>
+
+<input type="text" (keyup)="onKeyUp($event)">
+
+
+<h1>Two way databinding</h1>
+
+<input type="text" [(ngModel)]="firstName">
+
+  {{firstName}}
