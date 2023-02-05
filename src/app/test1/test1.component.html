@@ -1,1 +1,6 @@
-<p>test1 works!</p>
+<h1>Assignment</h1>
+
+<label>User Name: </label>
+<input type="text" [(ngModel)]="username">
+<p>{{username}} </p>
+<button (click)="checkEmpty(username)" [disabled]="!username">Reset</button><br>

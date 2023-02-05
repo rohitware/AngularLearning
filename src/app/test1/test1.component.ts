@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test1.component.css']
 })
 export class Test1Component implements OnInit {
+  username: string;
 
   constructor() { }
 
   ngOnInit() {
+  
   }
-
+  checkEmpty(): void {
+    this.username = '';
+  }
 }
+
+
