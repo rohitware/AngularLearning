@@ -1,16 +1,17 @@
+<h1>
+  Welcome to {{ title }}! {{name}}
+</h1>
+<h2><app-demo></app-demo></h2>
 
-  <h1>
-    Welcome to {{ title }}! {{name}}
-  </h1>
-  <h2><app-demo></app-demo></h2>
+<h2>{{d}}</h2>
 
-  <h2>{{d}}</h2>
-
-  <h3>{{d1}}</h3>
-  <app-test2></app-test2>
+<h3>{{d1}}</h3><br>
   <app-test1></app-test1>
   <br><br>
-  <img [src]="imageUrl" alt="">
+  <app-test2 [child]="parentToChild"></app-test2><br><br>
 
+  <app-card [title]="posts[0].title" [content]="posts[0].content"></app-card>
+  <app-card [title]="posts[1].title" [content]="posts[1].content"></app-card>
+  <img height="200px" width="200px" [src]="imageUrl" alt="">
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
