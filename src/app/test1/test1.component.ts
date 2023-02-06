@@ -11,10 +11,11 @@ export class Test1Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  
+
   }
-  checkEmpty(): void {
-    this.username = '';
+  clearField() {
+    this.username = null;
+    console.log(`field get cleared`);
   }
 }
 
