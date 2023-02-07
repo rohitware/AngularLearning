@@ -1,17 +1,21 @@
-<h1>
-  Welcome to {{ title }}! {{name}}
-</h1>
-<h2><app-demo></app-demo></h2>
+<div style="margin-left: 10px;">
+  <h1>
+    Welcome to {{ title }}! {{name}}
+  </h1><br>
+  <app-demo></app-demo>
 
-<h2>{{d}}</h2>
+  <br><br>
 
-<h3>{{d1}}</h3><br>
+  <h2>{{d}}</h2>
+
+  <h3>{{d1}}</h3><br>
   <app-test1></app-test1>
   <br><br>
-  <app-test2 [child]="parentToChild"></app-test2><br><br>
+  <app-test2 [child]="parentToChild" (fromChild)="onParent($event)">    
+  </app-test2><br><br>
 
   <app-card [title]="posts[0].title" [content]="posts[0].content"></app-card>
   <app-card [title]="posts[1].title" [content]="posts[1].content"></app-card>
   <img height="200px" width="200px" [src]="imageUrl" alt="">
-
-  <router-outlet></router-outlet>
+</div>
+<router-outlet></router-outlet>
