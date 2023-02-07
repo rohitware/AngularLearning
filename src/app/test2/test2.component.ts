@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-test2',
@@ -8,9 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class Test2Component implements OnInit {
   count: number = 0;
   firstName: string = 'Rohit';
+  lastname: string = 'Ware';
+
 
   @Input() child: string; // []
+  @Output() fromChild: EventEmitter<string> = new EventEmitter<string>(); // (fromChild)
   constructor() { }
+
+
 
   ngOnInit() {
     console.log(this.child);
@@ -24,4 +29,10 @@ export class Test2Component implements OnInit {
   onKeyUp(value) {
     console.log('$event', value.target.value)
   }
+
+  sendToParent() {
+    this.fromChild.emit(this.lastname);
+  }
+
+
 }
