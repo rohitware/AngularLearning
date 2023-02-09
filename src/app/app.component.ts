@@ -34,5 +34,9 @@ export class AppComponent {
     console.log('from child to parent', val);
   }
 
+  empObj(val: any){
+    console.log(val);    
+  }
+
 
 }

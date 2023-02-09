@@ -8,6 +8,8 @@ import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { NgforComponent } from './ngfor/ngfor.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { CardComponent } from './card/card.component';
     DemoComponent,
     Test1Component,
     Test2Component,
-    CardComponent
+    CardComponent,
+    EmployeeComponent,
+    NgforComponent
   ],
   imports: [
     BrowserModule,

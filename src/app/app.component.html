@@ -3,7 +3,6 @@
     Welcome to {{ title }}! {{name}}
   </h1><br>
   <app-demo></app-demo>
-
   <br><br>
 
   <h2>{{d}}</h2>
@@ -11,11 +10,14 @@
   <h3>{{d1}}</h3><br>
   <app-test1></app-test1>
   <br><br>
-  <app-test2 [child]="parentToChild" (fromChild)="onParent($event)">    
+  <app-test2 [child]="parentToChild" (fromChild)="onParent($event)">
   </app-test2><br><br>
 
   <app-card [title]="posts[0].title" [content]="posts[0].content"></app-card>
   <app-card [title]="posts[1].title" [content]="posts[1].content"></app-card>
-  <img height="200px" width="200px" [src]="imageUrl" alt="">
+  <img height="200px" width="200px" [src]="imageUrl" alt=""><br><br>
+
+  <app-employee (empFrmChild)="empObj($event)"></app-employee>
+  <app-ngfor></app-ngfor>  <br><br><br><br>
 </div>
 <router-outlet></router-outlet>
