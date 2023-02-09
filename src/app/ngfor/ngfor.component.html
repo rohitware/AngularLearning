@@ -29,15 +29,10 @@
 </div>
 
 
-
-
 <label>Choose a country:</label>
-<select [(ngModel)]="countries" (change)="setState()">
-    <!-- <option *ngFor="let country of countries" [value]="country">{{country}}</option> -->
-    <option value="INDIA"> INDIA</option>
-    <option value="USA"> USA</option>
+<select #tempRefVer (change)="setState(tempRefVer.value)">
+    <option *ngFor="let country of countries">{{country}}</option>
 </select>
-<!-- <lable>choose State</lable>  -->
 <select>
-    <option *ngFor="let state of states" [value]="state">{{state}}</option>
+    <option *ngFor="let state of states">{{state}}</option>
 </select>

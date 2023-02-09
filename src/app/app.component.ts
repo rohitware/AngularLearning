@@ -30,7 +30,7 @@ export class AppComponent {
   d1: string = new Date().toLocaleString();
 
 
-  onParent(val) {
+  onParent(val: any) {
     console.log('from child to parent', val);
   }
 

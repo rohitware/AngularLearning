@@ -22,10 +22,12 @@ export class EmployeeComponent implements OnInit {
 
   fireEvent(): void {
     this.empFrmChild.emit(this.emp);
+    // this.empFrmChild.emit(this.emp.id);
+    // this.empFrmChild.emit(this.emp.name);
+    // this.empFrmChild.emit(this.emp.adderss);
 
-    console.log(this.emp.id, this.emp.name, this.emp.adderss);
-    console.log(`onject details `,this.emp);
 
-    
+
+
   }
 }

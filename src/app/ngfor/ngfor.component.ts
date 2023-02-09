@@ -14,21 +14,19 @@ export class NgforComponent implements OnInit {
     { title: 'Kantara', director: 'Rishabh', cast: 'Rishabh', releaseDate: '2022' },
   ];
 
-  countries:any;
-
-  // indStates= ['Maharashtra', 'Gujrat', 'Rajshatan'];
-  // usaStates = ['California', 'New York', ' Washington'];
-  states: any;
+  countries = ['INDIA', 'USA'];
+  states : any = '';
 
   constructor() { }
 
   ngOnInit() {
   }
-  setState() {
-    if (this.countries == "INDIA") {
+
+  setState(val: any) {
+    if (val == "INDIA") {
       this.states = ['Maharashtra', 'Gujrat', 'Rajasthan'];
     }
-    if (this.countries == 'USA') {
+    if (val == 'USA') {
       this.states = ['California', 'New York', ' Washington'];
     }
   }
