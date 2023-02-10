@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { NgforComponent } from './ngfor/ngfor.component';
+import { NgifComponent } from './ngif/ngif.component';
+import { NgswitchComponent } from './ngswitch/ngswitch.component';
+import { NgstyleComponent } from './ngstyle/ngstyle.component';
+import { NgclassComponent } from './ngclass/ngclass.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { NgforComponent } from './ngfor/ngfor.component';
     Test2Component,
     CardComponent,
     EmployeeComponent,
-    NgforComponent
+    NgforComponent,
+    NgifComponent,
+    NgswitchComponent,
+    NgstyleComponent,
+    NgclassComponent
   ],
   imports: [
     BrowserModule,
