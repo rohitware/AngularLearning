@@ -14,6 +14,7 @@ import { NgifComponent } from './ngif/ngif.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
 import { NgstyleComponent } from './ngstyle/ngstyle.component';
 import { NgclassComponent } from './ngclass/ngclass.component';
+import { DirectivesAssignComponent } from './directives-assign/directives-assign.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NgclassComponent } from './ngclass/ngclass.component';
     NgifComponent,
     NgswitchComponent,
     NgstyleComponent,
-    NgclassComponent
+    NgclassComponent,
+    DirectivesAssignComponent
   ],
   imports: [
     BrowserModule,
