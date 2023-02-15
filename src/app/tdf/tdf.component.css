@@ -1,0 +1,14 @@
+.login-page {
+    max-width: 450px;
+    margin: 50px auto 0 auto;
+    background-color: rgb(199, 198, 198);
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-val {
+    margin-bottom: 10px;
+} 
