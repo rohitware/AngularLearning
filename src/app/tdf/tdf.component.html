@@ -1,0 +1,29 @@
+<mat-card class="login-page">
+    <div class="form-val">
+        {{ loginForm.value | json}}
+    </div>
+
+    <mat-card-title>
+        User Form
+    </mat-card-title>
+    <mat-card-content>
+        <form class="login-form" #loginForm="ngForm">
+            <mat-form-field>
+                <input matInput ngModel name="firstName" type="text" placeholder="First Name">
+            </mat-form-field>
+         
+            <mat-form-field>
+                <input matInput ngModel name="lastName" type="text" placeholder="Last Name">
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput name="address" ngModel
+                    placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput name="phoneNumber" ngModel name="phoneNumber" type="number" placeholder="Phone Number">
+            </mat-form-field>
+            <button style="max-width: 80px;" mat-raised-button color="primary" (click)="login(loginForm)">Submit</button>
+        </form>
+       
+    </mat-card-content>
+</mat-card>
