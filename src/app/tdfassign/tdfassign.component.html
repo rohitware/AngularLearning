@@ -1,0 +1,129 @@
+<div class="container-fluid">
+    <h3> Registration Form</h3><br>
+    <form #userForm="ngForm">
+        <!-- 
+        {{userForm.value | json}}<br>
+        {{userModel | json}} -->
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label>First Name</label>
+                <input type="text" required minlength="5" #firstNameControl="ngModel"
+                    [class.is-invalid]="firstNameControl.invalid && firstNameControl.touched" class="form-control"
+                    name="firstName" [(ngModel)]="userModel.firstName">
+                <div class="invalid-feedback" *ngIf="firstNameControl.errors?.required">
+                    name is required
+                </div>
+                <div class="invalid-feedback" *ngIf="firstNameControl.errors?.minlength && firstNameControl.touched">
+                    name is Invalid
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label>Last Name</label>
+                <input type="text" required maxlength="10" #lastNameControl="ngModel"
+                    [class.is-invalid]="lastNameControl.invalid && lastNameControl.touched" class="form-control"
+                    name="lastName" [(ngModel)]="userModel.lastName">
+                <div class="invalid-feedback" *ngIf="lastNameControl.invalid && lastNameControl.touched">
+                    Last Name required.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Age</label>
+                    <input type="number" required pattern="(?:1[7-9]|20)" #ageControl="ngModel"
+                        [class.is-invalid]="ageControl.touched && ageControl.invalid" class="form-control" name="age"
+                        [(ngModel)]="userModel.age">
+                    <div class="invalid-feedback" *ngIf="ageControl.errors?.required">
+                        Please enter age Betweeen 17 - 20.
+                    </div>
+                    <div class="invalid-feedback" *ngIf="ageControl.errors?.pattern && ageControl.touched">
+                        Age is Invalid
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label>Email</label>
+                <input type="email" required #emailControl="ngModel"
+                    pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+                    [class.is-invalid]="emailControl.invalid && emailControl.touched" class="form-control" name="email"
+                    [(ngModel)]="userModel.email">
+                <div class="invalid-feedback" *ngIf="emailControl.errors?.required">
+                    Email is required
+                </div>
+                <div class="invalid-feedback" *ngIf="emailControl.errors?.pattern && emailControl.touched">
+                    Email is Invalid
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label>Phone</label>
+                <input type="tel" required #phoneControl="ngModel" class="form-control" pattern="[7-9]{1}[0-9]{9}"
+                    name="phone" [class.is-invalid]="phoneControl.invalid && phoneControl.touched"
+                    [(ngModel)]="userModel.phone">
+                <div class="invalid-feedback" *ngIf="phoneControl.errors?.required">
+                    Phone Number is required
+                </div>
+                <div class="invalid-feedback" *ngIf="phoneControl.errors?.pattern && phoneControl.touched">
+                    Phone is Invalid
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">City</label>
+                <select class="form-select" name="city" [(ngModel)]="userModel.city">
+                    <option *ngFor="let city of cities">{{city}}</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label>Gender</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio"
+                        [class.is-invalid]="genderControl.touched && genderControl.invalid" name="gender" required
+                        #genderControl="ngModel" [(ngModel)]="userModel.gender" value="male">
+                    <label class="form-check-lable">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio"
+                        [class.is-invalid]="genderControl.touched && genderControl.invalid" name="gender" required
+                        #genderControl="ngModel" [(ngModel)]="userModel.gender" value="female">
+                    <label class="form-check-lable">Female</label>
+                </div>
+                <div class="invalid-feedback" *ngIf="genderControl.errors?.required">
+                    Gender is required
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <label>Password</label>
+                <input type="password" name="password"
+                    [class.is-invalid]="passwordControl.invalid && passwordControl.touched" class="form-control"
+                    [(ngModel)]="userModel.password" #passwordControl="ngModel" required minlength="6" />
+                <div class="invalid-feedback" *ngIf="passwordControl.errors?.required">Password is required</div>
+                <div class="invalid-feedback" *ngIf="passwordControl.errors?.minlength">Password must be at least 6
+                    characters</div>
+            </div>
+
+
+            <div class="col-md-6">
+                <label>Confirm Password</label>
+                <input type="password" name="confirmPassword" #conPasswordControl="ngModel" required
+                    [class.is-invalid]="conPasswordControl.invalid && conPasswordControl.touched" class="form-control"
+                    [(ngModel)]="userModel.confirmPassword" pattern="{{ userModel.password }}" />
+
+                <div class="invalid-feedback" *ngIf="conPasswordControl.errors?.required">Confirm Password is
+                    required
+                </div>
+                <div class="invalid-feedback" *ngIf="conPasswordControl.errors?.pattern">Passwords must match</div>
+            </div>
+
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                <button class="btn btn-primary" type="submit" (click)="login(userForm)"> Submit Form</button>
+            </div>
+        </div>
+    </form>
+</div>

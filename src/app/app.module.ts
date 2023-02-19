@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { NgforComponent } from './ngfor/ngfor.component';
@@ -42,6 +42,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { TDFComponent } from './tdf/tdf.component';
 import { TemplateformComponent } from './templateform/templateform.component';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { TDFAssignComponent } from './tdfassign/tdfassign.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { TemplateformComponent } from './templateform/templateform.component';
     DirectivesAssignComponent,
     CustomDirective,
     TDFComponent,
-    TemplateformComponent
+    TemplateformComponent,
+    ReactiveformComponent,
+    TDFAssignComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +92,8 @@ import { TemplateformComponent } from './templateform/templateform.component';
     MatRadioModule,
     MatCheckboxModule,
     MatStepperModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
