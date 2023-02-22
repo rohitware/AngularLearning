@@ -90,12 +90,12 @@
                         [class.is-invalid]="genderControl.touched && genderControl.invalid" name="gender" required
                         #genderControl="ngModel" [(ngModel)]="userModel.gender" value="female">
                     <label class="form-check-lable">Female</label>
-                </div>
-                <div class="invalid-feedback" *ngIf="genderControl.errors?.required">
-                    Gender is required
+
+                    <div class="invalid-feedback" *ngIf="genderControl.errors?.required">
+                        Gender is required
+                    </div>
                 </div>
             </div>
-
 
             <div class="col-md-6">
                 <label>Password</label>
@@ -114,8 +114,7 @@
                     [class.is-invalid]="conPasswordControl.invalid && conPasswordControl.touched" class="form-control"
                     [(ngModel)]="userModel.confirmPassword" pattern="{{ userModel.password }}" />
 
-                <div class="invalid-feedback" *ngIf="conPasswordControl.errors?.required">Confirm Password is
-                    required
+                <div class="invalid-feedback" *ngIf="conPasswordControl.errors?.required">Confirm Password is required
                 </div>
                 <div class="invalid-feedback" *ngIf="conPasswordControl.errors?.pattern">Passwords must match</div>
             </div>
