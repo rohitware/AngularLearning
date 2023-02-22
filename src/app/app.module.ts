@@ -44,6 +44,9 @@ import { TDFComponent } from './tdf/tdf.component';
 import { TemplateformComponent } from './templateform/templateform.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { TDFAssignComponent } from './tdfassign/tdfassign.component';
+import { ReactiveAssignComponent } from './reactive-assign/reactive-assign.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 
 @NgModule({
   declarations: [
@@ -63,7 +66,8 @@ import { TDFAssignComponent } from './tdfassign/tdfassign.component';
     TDFComponent,
     TemplateformComponent,
     ReactiveformComponent,
-    TDFAssignComponent
+    TDFAssignComponent,
+    ReactiveAssignComponent
   ],
   imports: [
     BrowserModule,
@@ -93,7 +97,8 @@ import { TDFAssignComponent } from './tdfassign/tdfassign.component';
     MatCheckboxModule,
     MatStepperModule,
     MatProgressBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDatepickerModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
