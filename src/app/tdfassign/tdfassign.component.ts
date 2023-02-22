@@ -17,5 +17,5 @@ export class TDFAssignComponent {
   login(form: NgForm) {
     console.log(form);
     form.reset();
-      }
+  }
 }
