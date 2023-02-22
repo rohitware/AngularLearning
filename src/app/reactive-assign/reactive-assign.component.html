@@ -1,0 +1,58 @@
+<div class="container">
+<div class="row justify-content-center" style="padding-bottom: 250px;">
+    <div class="col-md-3 text-left rounded shadow py-5">
+        <h3>Reactive Form Assignment</h3><br>
+
+        <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Email </label>
+                <input type="email"
+                    [class.is-invalid]="reactiveForm.get('email').invalid && reactiveForm.get('email').touched"
+                    formControlName="email" class="form-control">
+                <small class="text-danger"
+                    [class.d-none]=" reactiveForm.get('email').valid || reactiveForm.get('email').untouched">
+                    Please enter valid email</small>
+            </div>
+
+            <div class="form-group">
+                <label> Subscriptions</label>
+                <select formControlname="subscriptions" [(ngModel)]="defaultValue" class="form-control">
+                    <option *ngFor="let sub of Subscriptions">{{sub}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Password: </label>
+                <input type="password"
+                    [class.is-invalid]="reactiveForm.get('password').invalid && reactiveForm.get('password').touched"
+                    formControlName="password" class="form-control">
+                <small class="text-danger"
+                    [class.d-none]=" reactiveForm.get('password').valid || reactiveForm.get('password').untouched">Password
+                    should not empty</small>
+            </div>
+
+            <div class="form-group">
+                <label>Date: </label>
+                <input type="text"
+                [class.is-invalid]="reactiveForm.get('date').invalid && reactiveForm.get('date').touched"
+                formControlName="date" class="form-control" [minDate]="minDate" bsDatepicker>
+                <small class="text-danger"
+                [class.d-none]=" reactiveForm.get('date').valid || reactiveForm.get('date').untouched">Date Required</small>
+            </div><br>
+            <button class="btn btn-primary" type="submit" [disabled]="!reactiveForm.valid">Submit</button>
+        </form>
+
+
+        <div class="row justify-content-center mt-2" *ngIf="isSubmitted">
+            <div class="col-md-6 rounded shadow py4">
+                <h4>Form Data</h4>
+                <p>Email: <strong> {{ reactiveForm.get('email').value}}</strong></p>
+                <p>Subscriptions: <strong> {{ reactiveForm.get('subscriptions').value}}</strong></p>
+                <p>Password: <strong> {{ reactiveForm.get('password').value}}</strong></p>
+                <p>Date: <strong> {{ reactiveForm.get('date').value}}</strong></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
