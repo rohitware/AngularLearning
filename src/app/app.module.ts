@@ -46,6 +46,7 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { TDFAssignComponent } from './tdfassign/tdfassign.component';
 import { ReactiveAssignComponent } from './reactive-assign/reactive-assign.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ReactiveFormAssignComponent } from './reactive-form-assign/reactive-form-assign.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     TemplateformComponent,
     ReactiveformComponent,
     TDFAssignComponent,
-    ReactiveAssignComponent
+    ReactiveAssignComponent,
+    ReactiveFormAssignComponent
   ],
   imports: [
     BrowserModule,

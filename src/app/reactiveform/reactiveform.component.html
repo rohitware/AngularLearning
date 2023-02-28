@@ -10,6 +10,15 @@
                         <label for="username">Username</label>
                         <input type="text" formControlName="username" class="form-control" id="username"
                             placeholder="Enter user name">
+                        <div class="text-danger" *ngIf="!myReactiveForm.get('userDeatils.username').valid && 
+                    myReactiveForm.get('userDeatils.username').touched">
+                            <span *ngIf="myReactiveForm.get('userDeatils.username').errors['required']">
+                                User name not valid
+                            </span>
+                            <span *ngIf="myReactiveForm.get('userDeatils.username').errors['namesNotAllowed']">
+                                {{myReactiveForm.get('userDeatils.username').value}} is not allowed
+                            </span>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -25,10 +34,23 @@
                         <select formControlname="course" id="course" class="form-control">
                             <option value="HTML">HTML</option>
                             <option value="Angular">Angular</option>
-
                             <option value="JAvaScript">JAvaScript</option>
                         </select>
                     </div>
+
+                    <div class="formgroup" formArrayName="skills">
+                        <label>Skills</label>
+                        <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls; index as i">
+                            <input type="text" class="form-control" formControlName="{{i}}" placeholder="Add Skills">
+
+                        </ng-container>
+
+                        <button class="btn btn-light btn-small mt-4 btn-add" (click)="OnAddSkills()"><i>+</i>Add
+                            Skills</button>
+
+                    </div>
+
+
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>

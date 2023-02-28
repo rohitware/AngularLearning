@@ -12,7 +12,6 @@ export class ReactiveAssignComponent {
   Subscriptions = ["Basic", "Advanced", "Pro"];
   minDate: Date;
   isSubmitted: boolean = false;
-  default = 'Advanced';
 
 
 
