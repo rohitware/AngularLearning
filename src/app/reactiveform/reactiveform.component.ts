@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -11,7 +11,7 @@ export class ReactiveformComponent implements OnInit {
   isSubmited: boolean = false;
   myReactiveForm: FormGroup;
   notAllowedNames= ['Harry', 'Garry'];
-  constructor() {
+  constructor(private _fb: FormBuilder) {
     this.createForm();
   }
 
@@ -48,6 +48,15 @@ export class ReactiveformComponent implements OnInit {
         new FormControl(null, Validators.required)
       ])
     });
+
+    this.myReactiveForm = this._fb.group({
+      userDeatils: this._fb.group({
+        username: ['', [Validators.required, this.NaNames.bind(this) ]],
+        email: ['', [Validators.required, Validators.email], this.NaEmails]
+      }),
+      course: ['Angular'],
+      skills: this._fb.array([])
+     })
   }
 
   OnSubmit() {
