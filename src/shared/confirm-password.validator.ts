@@ -5,5 +5,5 @@ export const identityRevealedValidator: ValidatorFn = (control: AbstractControl)
     const confirmPassword = control.get('confirmPassword');
     
   
-    return password && confirmPassword && password.value === confirmPassword.value ? { 'identityRevealed': true } : null;
+    return password && confirmPassword && password.value !== confirmPassword.value ? { identityRevealed: true } : null;
   };
