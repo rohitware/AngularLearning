@@ -5,14 +5,8 @@
   <mat-card-content>
     <form class="login-form" #loginForm="ngForm">
       <div ngModelGroup="userDetail" #userDetail="ngModelGroup">
-
-
         <mat-form-field>
-
           <input matInput type="email" name="email" ngModel #email="ngModel" required email placeholder="Email">
-
-
-
           <!-- <small *ngIf="!email.valid && email.touched">This email is mandatory</small> -->
         </mat-form-field>
         <small *ngIf="!userDetail.valid && userDetail.touched">This email is mandatory</small>
@@ -48,6 +42,10 @@
   </mat-card-content>
 </mat-card>
 
-<input type="date" [(ngModel)]="age">
-<button type="button" (click)="ageCalculator()">Calculate</button>
-<p *ngIf="age">{{showAge}}</p>
+<div class="card" style="width: 18rem;">
+  <div class="card-header"> Age Calculator:</div>
+  <label>Date of Birth	:</label>
+  <input type="date" [(ngModel)]="age">
+  <span *ngIf="age">Result: {{showAge}} Years</span>
+  <button type="button" (click)="ageCalculator()">Calculate</button>  
+</div>
