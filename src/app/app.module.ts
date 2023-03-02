@@ -47,6 +47,7 @@ import { TDFAssignComponent } from './tdfassign/tdfassign.component';
 import { ReactiveAssignComponent } from './reactive-assign/reactive-assign.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ReactiveFormAssignComponent } from './reactive-form-assign/reactive-form-assign.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -101,6 +102,7 @@ import { ReactiveFormAssignComponent } from './reactive-form-assign/reactive-for
     MatProgressBarModule,
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
