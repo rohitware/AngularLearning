@@ -33,11 +33,60 @@
 
   <app-tdf></app-tdf><br><br>
   <app-templateform></app-templateform><br><br>
- 
+
   <app-tdfassign></app-tdfassign><br><br><br>
   <app-reactiveform></app-reactiveform><br><br>
   <app-reactive-assign></app-reactive-assign><br><br>
   <app-reactive-form-assign></app-reactive-form-assign><br><br>
+
+  <ng-container *ngFor="let product of products">
+    Product Name : <strong class="text-success">{{product.name}}</strong>
+    Product Id : <strong class="text-success">{{product.id}}</strong>
+
+  </ng-container><br><br>
+
+  <div class="main-content">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header" style="background: burlywood;">
+          <h4>Users Details</h4>
+        </div>
+        <table class="table table-striped">
+          <thead class="table-primary" style="background-color: darkkhaki;">
+            <th>ID</th>
+            <th>Name:</th>
+            <th>Username:</th>
+            <th>Email:</th>
+            <th>Address:</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Company</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users let i = index">
+              <td>{{i+1}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.address.street}},{{user.address.suite}},{{user.address.city}}, {{user.address.zipcode}}</td>
+              <td>{{user.phone}}</td>
+              <td>{{user.website}}</td>
+              <td>{{user.company.name}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
 
 </div>
 <router-outlet></router-outlet>
