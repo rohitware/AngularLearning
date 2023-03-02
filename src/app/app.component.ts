@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DemoService } from './Services/demo.service';
+import { MyserviceService } from './Services/myservice.service';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  products = {};
+  public users: any;
+
+  constructor(private _myService: MyserviceService, private _demoService: DemoService) { }
+
+  ngOnInit(): void {
+    this.products = this._myService.products;
+    this._demoService.getUsers().subscribe(res => {
+      this.users = res;
+    }, err => {
+      console.log(err);
+    })
+  }
   title = 'Angular App';
 
   parentToChild: string = "I am coming from parent ";
@@ -34,8 +51,8 @@ export class AppComponent {
     console.log('from child to parent', val);
   }
 
-  empObj(val: any){
-    console.log(val);    
+  empObj(val: any) {
+    console.log(val);
   }
 
 
