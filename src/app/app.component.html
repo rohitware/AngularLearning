@@ -45,14 +45,21 @@
 
   </ng-container><br><br>
 
-  <div class="main-content">
-    <div class="container-fluid">
-      <div class="card">
-        <div class="card-header" style="background: burlywood;">
-          <h4>Users Details</h4>
-        </div>
-        <table class="table table-striped">
-          <thead class="table-primary" style="background-color: darkkhaki;">
+  <div class="container">
+    <div class="col-md-4">
+      <label for="serch">
+        <h4> Search by Name</h4>
+      </label>
+      <input type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="namesearch">
+    </div>
+
+    <div class="card">
+      <div class="card-header" style="background: burlywood;">
+        <h4>Users Details</h4>
+      </div>
+      <table class="table table-striped">
+        <thead class="table-primary" style="background-color: darkkhaki;">
+          <tr>
             <th>ID</th>
             <th>Name:</th>
             <th>Username:</th>
@@ -61,29 +68,41 @@
             <th>Phone</th>
             <th>Website</th>
             <th>Company</th>
-          </thead>
-          <tbody>
-            <tr *ngFor="let user of users let i = index">
-              <td>{{i+1}}</td>
-              <td>{{user.name}}</td>
-              <td>{{user.username}}</td>
-              <td>{{user.email}}</td>
-              <td>{{user.address.street}},{{user.address.suite}},{{user.address.city}}, {{user.address.zipcode}}</td>
-              <td>{{user.phone}}</td>
-              <td>{{user.website}}</td>
-              <td>{{user.company.name}}</td>
-            </tr>
-          </tbody>
-        </table>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users | search:namesearch">
+            <th scope="row">{{user.id}}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.address.street}},{{user.address.suite}},{{user.address.city}}, {{user.address.zipcode}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.website}}</td>
+            <td>{{user.company.name}}</td>
+          </tr>
+        </tbody>
+      </table>
 
-      </div>
     </div>
   </div>
+  <br><br>
+
+  <app-pipe-example></app-pipe-example><br><br>
+  <app-product-filter></app-product-filter>
 
 
-
-
-
+  <div class="container">
+  <div class="row">
+    <div class="col-md-6"> <app-comp1></app-comp1>
+      <app-comp2></app-comp2>
+    </div>
+    <div class="col-md-6">
+      <app-comp3></app-comp3>
+      <app-comp4></app-comp4>
+    </div>
+  </div>
+  </div>
 
 
 
