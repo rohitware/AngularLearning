@@ -48,6 +48,14 @@ import { ReactiveAssignComponent } from './reactive-assign/reactive-assign.compo
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ReactiveFormAssignComponent } from './reactive-form-assign/reactive-form-assign.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PipeExampleComponent } from './pipe-example/pipe-example.component';
+import { CustomPipe } from './custom.pipe';
+import { SearchPipe } from './search.pipe';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
+import { Comp1Component } from './comp1/comp1.component';
+import { Comp2Component } from './comp2/comp2.component';
+import { Comp3Component } from './comp3/comp3.component';
+import { Comp4Component } from './comp4/comp4.component';
 
 
 @NgModule({
@@ -70,7 +78,15 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveformComponent,
     TDFAssignComponent,
     ReactiveAssignComponent,
-    ReactiveFormAssignComponent
+    ReactiveFormAssignComponent,
+    PipeExampleComponent,
+    CustomPipe,
+    SearchPipe,
+    ProductFilterComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Comp4Component
   ],
   imports: [
     BrowserModule,
