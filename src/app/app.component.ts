@@ -9,6 +9,7 @@ import { MyserviceService } from './Services/myservice.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  name: string = '';
 
   products = {};
   public users: any;
@@ -38,7 +39,7 @@ export class AppComponent implements OnInit {
     }
   ]
 
-  name = 'Rohit';
+  // name = 'Rohit';
 
   imageUrl = 'https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg';
 
