@@ -1,0 +1,103 @@
+<app-demo></app-demo>
+<br>
+
+<h2>{{d}}</h2>
+<h3>{{d1}}</h3><br>
+
+<app-test1></app-test1>
+<br><br>
+<app-test2 [child]="parentToChild" (fromChild)="onParent($event)">
+</app-test2><br>
+
+<app-card [title]="posts[0].title" [content]="posts[0].content"></app-card>
+<app-card [title]="posts[1].title" [content]="posts[1].content"></app-card>
+<img height="200px" width="200px" [src]="imageUrl" alt=""><br><br>
+
+<app-employee (empFrmChild)="empObj($event)"></app-employee>
+
+<app-ngfor></app-ngfor> <br>
+<app-ngif></app-ngif> <br>
+<app-ngswitch></app-ngswitch>
+<app-ngstyle></app-ngstyle>
+<app-ngclass></app-ngclass>
+<app-directives-assign></app-directives-assign>
+<br><br><br>
+
+<p appCustom> this is paragraph</p>
+
+<mat-slide-toggle>Toggle me!</mat-slide-toggle><br><br><br>
+
+<app-tdf></app-tdf><br><br>
+<app-templateform></app-templateform><br><br>
+
+<app-tdfassign></app-tdfassign><br><br><br>
+<app-reactiveform></app-reactiveform><br><br>
+<app-reactive-assign></app-reactive-assign><br><br>
+<app-reactive-form-assign></app-reactive-form-assign><br><br>
+
+<ng-container *ngFor="let product of products">
+    Product Name : <strong class="text-success">{{product.name}}</strong>
+    Product Id : <strong class="text-success">{{product.id}}</strong>
+
+</ng-container><br><br>
+
+<div class="container">
+    <div class="col-md-4">
+        <label for="serch">
+            <h4> Search by Name</h4>
+        </label>
+        <input type="text" class="form-control" placeholder="Enter Name" [(ngModel)]="namesearch">
+    </div>
+
+    <div class="card">
+        <div class="card-header" style="background: burlywood;">
+            <h4>Users Details</h4>
+        </div>
+        <table class="table table-striped">
+            <thead class="table-primary" style="background-color: darkkhaki;">
+                <tr>
+                    <th>ID</th>
+                    <th>Name:</th>
+                    <th>Username:</th>
+                    <th>Email:</th>
+                    <th>Address:</th>
+                    <th>Phone</th>
+                    <th>Website</th>
+                    <th>Company</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users | search:namesearch">
+                    <th scope="row">{{user.id}}</th>
+                    <td>{{user.name}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.address.street}},{{user.address.suite}},{{user.address.city}}, {{user.address.zipcode}}
+                    </td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.website}}</td>
+                    <td>{{user.company.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<br><br>
+
+<app-pipe-example></app-pipe-example><br><br>
+<app-product-filter></app-product-filter>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6"> <app-comp1></app-comp1>
+            <app-comp2></app-comp2>
+        </div>
+        <div class="col-md-6">
+            <app-comp3></app-comp3>
+            <app-comp4></app-comp4>
+        </div>
+    </div>
+</div>
+

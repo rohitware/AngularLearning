@@ -9,52 +9,56 @@ import { MyserviceService } from './Services/myservice.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  name: string = '';
-
-  products = {};
-  public users: any;
-
-  constructor(private _myService: MyserviceService, private _demoService: DemoService) { }
+    title = 'Angular App';
 
   ngOnInit(): void {
-    this.products = this._myService.products;
-    this._demoService.getUsers().subscribe(res => {
-      this.users = res;
-    }, err => {
-      console.log(err);
-    })
+    throw new Error('Method not implemented.');
   }
-  title = 'Angular App';
+  // name: string = '';
 
-  parentToChild: string = "I am coming from parent ";
+  // products = {};
+  // public users: any;
 
-  posts = [
-    {
-      title: 'Pam Tree',
-      content: 'I love this tree'
-    },
-    {
-      title: 'Mango Tree',
-      content: 'I love this tree'
-    }
-  ]
+  // constructor(private _myService: MyserviceService, private _demoService: DemoService) { }
 
-  // name = 'Rohit';
+  // ngOnInit(): void {
+  //   this.products = this._myService.products;
+  //   this._demoService.getUsers().subscribe(res => {
+  //     this.users = res;
+  //   }, err => {
+  //     console.log(err);
+  //   })
+  // }
 
-  imageUrl = 'https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg';
+  // parentToChild: string = "I am coming from parent ";
 
-  d: Date = new Date();
+  // posts = [
+  //   {
+  //     title: 'Pam Tree',
+  //     content: 'I love this tree'
+  //   },
+  //   {
+  //     title: 'Mango Tree',
+  //     content: 'I love this tree'
+  //   }
+  // ]
 
-  d1: string = new Date().toLocaleString();
+  // // name = 'Rohit';
+
+  // imageUrl = 'https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg';
+
+  // d: Date = new Date();
+
+  // d1: string = new Date().toLocaleString();
 
 
-  onParent(val: any) {
-    console.log('from child to parent', val);
-  }
+  // onParent(val: any) {
+  //   console.log('from child to parent', val);
+  // }
 
-  empObj(val: any) {
-    console.log(val);
-  }
+  // empObj(val: any) {
+  //   console.log(val);
+  // }
 
 
 }

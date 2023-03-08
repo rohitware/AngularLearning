@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <h1>
     Welcome to {{ title }}! {{name}}
   </h1>
@@ -93,19 +93,39 @@
 
 
   <div class="container">
-  <div class="row">
-    <div class="col-md-6"> <app-comp1></app-comp1>
-      <app-comp2></app-comp2>
-    </div>
-    <div class="col-md-6">
-      <app-comp3></app-comp3>
-      <app-comp4></app-comp4>
+    <div class="row">
+      <div class="col-md-6"> <app-comp1></app-comp1>
+        <app-comp2></app-comp2>
+      </div>
+      <div class="col-md-6">
+        <app-comp3></app-comp3>
+        <app-comp4></app-comp4>
+      </div>
     </div>
   </div>
-  </div>
+
+</div> -->
 
 
+<div class="container">
+<h1>
+  Welcome to {{ title }}! {{name}}
+</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul class=" nav nav-tabs">
+  <li class="nav-items"><a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a></li>
+  <li class="nav-items"><a routerLink="/about-us" routerLinkActive="active" class="nav-link">About Us</a></li>
+  <li class="nav-items"><a routerLink="/contact-us" routerLinkActive="active" class="nav-link">Contact Us</a></li>
+  <li class="nav-items"><a routerLink="/product" routerLinkActive="active" class="nav-link">Product</a></li>
+  <li class="nav-items"><a routerLink="/sports-equipment" routerLinkActive="active" class="nav-link">Sports
+      Equipment</a></li>
 
+  </ul>
 
+  </nav>
 </div>
+<!-- The routed views render in the <router-outlet>-->
+
+
 <router-outlet></router-outlet>

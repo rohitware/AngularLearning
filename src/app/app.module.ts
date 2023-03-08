@@ -56,6 +56,20 @@ import { Comp1Component } from './comp1/comp1.component';
 import { Comp2Component } from './comp2/comp2.component';
 import { Comp3Component } from './comp3/comp3.component';
 import { Comp4Component } from './comp4/comp4.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductComponent } from './product/product.component';
+import { LaptopComponent } from './product/laptop/laptop.component';
+import { MobileComponent } from './product/mobile/mobile.component';
+import { CameraComponent } from './product/camera/camera.component';
+import { WatchComponent } from './product/watch/watch.component';
+import { SportsEquipmentComponent } from './sports-equipment/sports-equipment.component';
+import { CycleComponent } from './sports-equipment/cycle/cycle.component';
+import { BatComponent } from './sports-equipment/bat/bat.component';
+import { DumbbellComponent } from './sports-equipment/dumbbell/dumbbell.component';
+import { TreadmillComponent } from './sports-equipment/treadmill/treadmill.component';
 
 
 @NgModule({
@@ -86,7 +100,21 @@ import { Comp4Component } from './comp4/comp4.component';
     Comp1Component,
     Comp2Component,
     Comp3Component,
-    Comp4Component
+    Comp4Component,
+    AboutusComponent,
+    ContactusComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+    ProductComponent,
+    LaptopComponent,
+    MobileComponent,
+    CameraComponent,
+    WatchComponent,
+    SportsEquipmentComponent,
+    CycleComponent,
+    BatComponent,
+    DumbbellComponent,
+    TreadmillComponent
   ],
   imports: [
     BrowserModule,
