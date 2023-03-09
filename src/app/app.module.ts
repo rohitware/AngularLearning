@@ -72,6 +72,8 @@ import { DumbbellComponent } from './sports-equipment/dumbbell/dumbbell.componen
 import { TreadmillComponent } from './sports-equipment/treadmill/treadmill.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
+import { UserComponent } from './user/user.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 @NgModule({
@@ -118,7 +120,9 @@ import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.comp
     DumbbellComponent,
     TreadmillComponent,
     DemopostComponent,
-    DemopostdetailsComponent
+    DemopostdetailsComponent,
+    UserComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

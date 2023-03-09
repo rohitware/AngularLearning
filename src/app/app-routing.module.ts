@@ -16,6 +16,8 @@ import { CycleComponent } from './sports-equipment/cycle/cycle.component';
 import { DumbbellComponent } from './sports-equipment/dumbbell/dumbbell.component';
 import { SportsEquipmentComponent } from './sports-equipment/sports-equipment.component';
 import { TreadmillComponent } from './sports-equipment/treadmill/treadmill.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [
@@ -45,6 +47,9 @@ const routes: Routes = [
   },
   { path: 'posts', component: DemopostComponent },
   { path: 'postdetails/:id', component: DemopostdetailsComponent },
+  { path: 'users', component: UserComponent },
+  { path: 'userdetails/:id', component: UserDetailsComponent },
+
   { path: '**', component: PageNotFoundComponent }
 ];
 
