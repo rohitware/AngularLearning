@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { DemopostComponent } from './demopost/demopost.component';
+import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CameraComponent } from './product/camera/camera.component';
@@ -22,9 +24,9 @@ const routes: Routes = [
   { path: 'about-us', component: AboutusComponent },
   { path: 'contact-us', component: ContactusComponent },
   {
-    path: 'product',
+    path: 'product', component: ProductComponent,
     children: [
-      { path: '', component: ProductComponent },
+
       { path: 'laptop', component: LaptopComponent },
       { path: 'mobile', component: MobileComponent },
       { path: 'camera', component: CameraComponent },
@@ -41,9 +43,8 @@ const routes: Routes = [
       { path: 'treadmill', component: TreadmillComponent },
     ]
   },
-
-
-
+  { path: 'posts', component: DemopostComponent },
+  { path: 'postdetails/:id', component: DemopostdetailsComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

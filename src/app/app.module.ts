@@ -70,6 +70,8 @@ import { CycleComponent } from './sports-equipment/cycle/cycle.component';
 import { BatComponent } from './sports-equipment/bat/bat.component';
 import { DumbbellComponent } from './sports-equipment/dumbbell/dumbbell.component';
 import { TreadmillComponent } from './sports-equipment/treadmill/treadmill.component';
+import { DemopostComponent } from './demopost/demopost.component';
+import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
 
 
 @NgModule({
@@ -114,7 +116,9 @@ import { TreadmillComponent } from './sports-equipment/treadmill/treadmill.compo
     CycleComponent,
     BatComponent,
     DumbbellComponent,
-    TreadmillComponent
+    TreadmillComponent,
+    DemopostComponent,
+    DemopostdetailsComponent
   ],
   imports: [
     BrowserModule,
