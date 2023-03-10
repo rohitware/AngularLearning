@@ -5,6 +5,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
 import { HomeComponent } from './home/home.component';
+import { OrderlistComponent } from './orders/orderlist/orderlist.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CameraComponent } from './product/camera/camera.component';
 import { LaptopComponent } from './product/laptop/laptop.component';
@@ -53,6 +54,7 @@ const routes: Routes = [
   { path: 'userdetails/:id', component: UserDetailsComponent },
   { path: 'userdata', component: UserDataComponent },
   { path: 'login', component: TemplateformComponent },
+  {path:'order', component: OrderlistComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 

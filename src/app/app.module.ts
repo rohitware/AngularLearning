@@ -72,6 +72,7 @@ import { UserComponent } from './user/user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ProductModule } from './product/product.module';
 import { UserDataComponent } from './user-data/user-data.component';
+import { OrdersModule } from './orders/orders.module';
 
 
 @NgModule({
@@ -88,7 +89,7 @@ import { UserDataComponent } from './user-data/user-data.component';
     NgstyleComponent,
     NgclassComponent,
     DirectivesAssignComponent,
-    CustomDirective,
+    // CustomDirective,
     TDFComponent,
     TemplateformComponent,
     ReactiveformComponent,
@@ -150,7 +151,8 @@ import { UserDataComponent } from './user-data/user-data.component';
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
     HttpClientModule,
-    ProductModule
+    ProductModule,
+    OrdersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
