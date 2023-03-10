@@ -60,11 +60,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductComponent } from './product/product.component';
-import { LaptopComponent } from './product/laptop/laptop.component';
-import { MobileComponent } from './product/mobile/mobile.component';
-import { CameraComponent } from './product/camera/camera.component';
-import { WatchComponent } from './product/watch/watch.component';
+
 import { SportsEquipmentComponent } from './sports-equipment/sports-equipment.component';
 import { CycleComponent } from './sports-equipment/cycle/cycle.component';
 import { BatComponent } from './sports-equipment/bat/bat.component';
@@ -74,6 +70,8 @@ import { DemopostComponent } from './demopost/demopost.component';
 import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
 import { UserComponent } from './user/user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { ProductModule } from './product/product.module';
+import { UserDataComponent } from './user-data/user-data.component';
 
 
 @NgModule({
@@ -109,11 +107,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     ContactusComponent,
     HomeComponent,
     PageNotFoundComponent,
-    ProductComponent,
-    LaptopComponent,
-    MobileComponent,
-    CameraComponent,
-    WatchComponent,
+    
     SportsEquipmentComponent,
     CycleComponent,
     BatComponent,
@@ -122,7 +116,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     DemopostComponent,
     DemopostdetailsComponent,
     UserComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserDataComponent
   ],
   imports: [
     BrowserModule,
@@ -154,7 +149,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     MatProgressBarModule,
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]

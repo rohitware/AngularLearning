@@ -16,6 +16,8 @@ import { CycleComponent } from './sports-equipment/cycle/cycle.component';
 import { DumbbellComponent } from './sports-equipment/dumbbell/dumbbell.component';
 import { SportsEquipmentComponent } from './sports-equipment/sports-equipment.component';
 import { TreadmillComponent } from './sports-equipment/treadmill/treadmill.component';
+import { TemplateformComponent } from './templateform/templateform.component';
+import { UserDataComponent } from './user-data/user-data.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserComponent } from './user/user.component';
 
@@ -49,7 +51,8 @@ const routes: Routes = [
   { path: 'postdetails/:id', component: DemopostdetailsComponent },
   { path: 'users', component: UserComponent },
   { path: 'userdetails/:id', component: UserDetailsComponent },
-
+  { path: 'userdata', component: UserDataComponent },
+  { path: 'login', component: TemplateformComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

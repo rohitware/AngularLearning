@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MyserviceService } from '../Services/myservice.service';
 
 @Component({
@@ -23,18 +24,18 @@ export class TemplateformComponent implements OnInit {
   emails = '';
   showAge: number;
   age: any;
-  constructor(private objService: MyserviceService) { }
+  constructor(private objService: MyserviceService, private _router: Router) { }
 
   ngOnInit() {
     this.objService.display();
 
     this.objService.print();
 
-
   }
 
 
   login(form: NgForm) {
+    this._router.navigate(['/userdata'])
     console.log(form);
     form.reset();
   }
@@ -42,5 +43,5 @@ export class TemplateformComponent implements OnInit {
   ageCalculator() {
     this.showAge = this.objService.ageCalculator(this.age);
   }
- 
+
 }
