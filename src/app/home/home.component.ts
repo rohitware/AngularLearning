@@ -9,7 +9,7 @@ import { MyserviceService } from '../Services/myservice.service';
 })
 export class HomeComponent implements OnInit {
 
-  name: string = '';
+  namesearch: string = '';
 
   products = {};
   public users: any;
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     }
   ]
 
-  // name = 'Rohit';
+  name = 'Rohit';
 
   imageUrl = 'https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg';
 
