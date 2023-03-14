@@ -4,6 +4,10 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
+import { BackpacksComponent } from './fashion/backpacks/backpacks.component';
+import { FashionComponent } from './fashion/fashion.component';
+import { SunglassesComponent } from './fashion/sunglasses/sunglasses.component';
+import { WalletsComponent } from './fashion/wallets/wallets.component';
 import { HomeComponent } from './home/home.component';
 import { OrderlistComponent } from './orders/orderlist/orderlist.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -54,7 +58,21 @@ const routes: Routes = [
   { path: 'userdetails/:id', component: UserDetailsComponent },
   { path: 'userdata', component: UserDataComponent },
   { path: 'login', component: TemplateformComponent },
-  {path:'order', component: OrderlistComponent},
+  { path: 'order', component: OrderlistComponent },
+
+  {
+    path: 'fashion',
+
+    children: [
+      { path: '', component: FashionComponent },
+      { path: 'backpacks', component: BackpacksComponent },
+      { path: 'wallets', component: WalletsComponent },
+      { path: 'sunglasses', component: SunglassesComponent },
+    ]
+  },
+  { path: 'customer', loadChildren: './customer/customer.module#CustomerModule' },
+  { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
+
   { path: '**', component: PageNotFoundComponent }
 ];
 
