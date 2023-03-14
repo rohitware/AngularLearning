@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DemoService } from '../Services/demo.service';
 import { MyserviceService } from '../Services/myservice.service';
+import { RapidapiService } from '../Services/rapidapi.service';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +14,9 @@ export class HomeComponent implements OnInit {
 
   products = {};
   public users: any;
+  finarray: any;
 
-  constructor(private _myService: MyserviceService, private _demoService: DemoService) { }
+  constructor(private _myService: MyserviceService, private _demoService: DemoService, private rapidapiService: RapidapiService) { }
 
   ngOnInit(): void {
     this.products = this._myService.products;
@@ -23,6 +25,12 @@ export class HomeComponent implements OnInit {
     }, err => {
       console.log(err);
     })
+
+    this.rapidapiService.getFinance().subscribe(res => {
+      console.log('Rapid Response', res);
+      this.finarray = res;
+    })
+    
   }
 
   parentToChild: string = "I am coming from parent ";
