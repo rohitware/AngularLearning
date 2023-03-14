@@ -101,3 +101,54 @@
     </div>
 </div>
 
+
+
+
+
+
+
+<table class="table">
+    <thead>
+        <h4>News Table</h4>
+        <tr>
+            <th>Publisher</th>
+            <th>Link</th>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Uuid</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fin of finarray.news">
+            <td>{{fin.publisher}}</td>
+            <td>{{fin.link}}</td>
+            <td>{{fin.title}}</td>
+            <td>{{fin.type}}</td>
+            <td>{{fin.uuid}}</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <h4>Quotes Table</h4>
+        <tr>
+            <th>score</th>
+            <th>Industry</th>
+            <th>Sector</th>
+            <th>ExchDisp</th>
+            <th>Symbol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fin of finarray.quotes">
+            <td>{{fin.score}}</td>
+            <td>{{fin.industry}}</td>
+            <td>{{fin.sector}}</td>
+            <td>{{fin.exchDisp}}</td>
+            <td>{{fin.symbol}}</td>
+        </tr>
+
+    </tbody>
+</table>
