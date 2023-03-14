@@ -73,6 +73,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { ProductModule } from './product/product.module';
 import { UserDataComponent } from './user-data/user-data.component';
 import { OrdersModule } from './orders/orders.module';
+import {FashionModule} from './fashion/fashion.module'
 
 
 @NgModule({
@@ -152,7 +153,8 @@ import { OrdersModule } from './orders/orders.module';
     BsDatepickerModule.forRoot(),
     HttpClientModule,
     ProductModule,
-    OrdersModule
+    OrdersModule,
+    FashionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
