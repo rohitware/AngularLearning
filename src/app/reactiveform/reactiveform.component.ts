@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ReactiveformComponent implements OnInit {
   isSubmited: boolean = false;
   myReactiveForm: FormGroup;
-  notAllowedNames= ['Harry', 'Garry'];
+  notAllowedNames = ['Harry', 'Garry'];
   constructor(private _fb: FormBuilder) {
     this.createForm();
   }
@@ -31,7 +31,8 @@ export class ReactiveformComponent implements OnInit {
       this.myReactiveForm.patchValue({
         'userDeatils': {
           'username': 'Codemind123',
-          'email': new FormControl(null, [Validators.required, Validators.email], this.NaEmails)        }
+          'email': new FormControl(null, [Validators.required, Validators.email], this.NaEmails)
+        }
       })
     }, 5000)
 
@@ -51,12 +52,12 @@ export class ReactiveformComponent implements OnInit {
 
     this.myReactiveForm = this._fb.group({
       userDeatils: this._fb.group({
-        username: ['', [Validators.required, this.NaNames.bind(this) ]],
+        username: ['', [Validators.required, this.NaNames.bind(this)]],
         email: ['', [Validators.required, Validators.email], this.NaEmails]
       }),
       course: ['Angular'],
       skills: this._fb.array([])
-     })
+    })
   }
 
   OnSubmit() {
@@ -77,11 +78,11 @@ export class ReactiveformComponent implements OnInit {
     }
   }
 
-  NaEmails(control: FormControl) : Promise<any> | Observable<any> {
-    const myResponse = new Promise<any> ((resolve, reject) => {
+  NaEmails(control: FormControl): Promise<any> | Observable<any> {
+    const myResponse = new Promise<any>((resolve, reject) => {
       setTimeout(() => {
-        if(control.value == 'codemindtechnology@gmail.com') {
-          resolve({'emailNotAllowed': true})
+        if (control.value == 'codemindtechnology@gmail.com') {
+          resolve({ 'emailNotAllowed': true })
         } else {
           resolve(null)
         }
