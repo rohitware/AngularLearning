@@ -119,7 +119,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let fin of finarray.news">
+        <tr *ngFor="let fin of finarray?.news">
             <td>{{fin.publisher}}</td>
             <td>{{fin.link}}</td>
             <td>{{fin.title}}</td>
@@ -142,7 +142,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let fin of finarray.quotes">
+        <tr *ngFor="let fin of finarray?.quotes">
             <td>{{fin.score}}</td>
             <td>{{fin.industry}}</td>
             <td>{{fin.sector}}</td>
@@ -152,3 +152,33 @@
 
     </tbody>
 </table>
+
+
+<br><br>
+<br>
+
+
+<button class="btn btn-success" (click)=" CreatePost()">Save</button> &nbsp;
+<button class="btn btn-success" (click)="getData()">Get Data</button>
+
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <h4>Firebase data</h4>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let fbr of firebaseRes">
+                <td>{{fbr.id}}</td>
+                <td>{{fbr.title}}</td>
+                <td>{{fbr.content}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

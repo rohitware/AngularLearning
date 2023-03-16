@@ -73,7 +73,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { ProductModule } from './product/product.module';
 import { UserDataComponent } from './user-data/user-data.component';
 import { OrdersModule } from './orders/orders.module';
-import {FashionModule} from './fashion/fashion.module'
+import {FashionModule} from './fashion/fashion.module';
+import { TodoComponent } from './todo/todo.component'
 
 
 @NgModule({
@@ -119,7 +120,8 @@ import {FashionModule} from './fashion/fashion.module'
     DemopostdetailsComponent,
     UserComponent,
     UserDetailsComponent,
-    UserDataComponent
+    UserDataComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

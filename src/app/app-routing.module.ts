@@ -22,6 +22,7 @@ import { DumbbellComponent } from './sports-equipment/dumbbell/dumbbell.componen
 import { SportsEquipmentComponent } from './sports-equipment/sports-equipment.component';
 import { TreadmillComponent } from './sports-equipment/treadmill/treadmill.component';
 import { TemplateformComponent } from './templateform/templateform.component';
+import { TodoComponent } from './todo/todo.component';
 import { UserDataComponent } from './user-data/user-data.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserComponent } from './user/user.component';
@@ -72,6 +73,7 @@ const routes: Routes = [
   },
   { path: 'customer', loadChildren: './customer/customer.module#CustomerModule' },
   { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
+  { path: 'todo', component: TodoComponent },
 
   { path: '**', component: PageNotFoundComponent }
 ];
