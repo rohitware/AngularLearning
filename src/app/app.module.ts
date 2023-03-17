@@ -47,7 +47,7 @@ import { TDFAssignComponent } from './tdfassign/tdfassign.component';
 import { ReactiveAssignComponent } from './reactive-assign/reactive-assign.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ReactiveFormAssignComponent } from './reactive-form-assign/reactive-form-assign.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 import { CustomPipe } from './custom.pipe';
 import { SearchPipe } from './search.pipe';
@@ -73,8 +73,10 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { ProductModule } from './product/product.module';
 import { UserDataComponent } from './user-data/user-data.component';
 import { OrdersModule } from './orders/orders.module';
-import {FashionModule} from './fashion/fashion.module';
+import { FashionModule } from './fashion/fashion.module';
 import { TodoComponent } from './todo/todo.component'
+import { LoginformComponent } from './loginform/loginform.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 
 @NgModule({
@@ -110,7 +112,7 @@ import { TodoComponent } from './todo/todo.component'
     ContactusComponent,
     HomeComponent,
     PageNotFoundComponent,
-    
+
     SportsEquipmentComponent,
     CycleComponent,
     BatComponent,
@@ -121,7 +123,8 @@ import { TodoComponent } from './todo/todo.component'
     UserComponent,
     UserDetailsComponent,
     UserDataComponent,
-    TodoComponent
+    TodoComponent,
+    LoginformComponent
   ],
   imports: [
     BrowserModule,
@@ -158,7 +161,11 @@ import { TodoComponent } from './todo/todo.component'
     OrdersModule,
     FashionModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  }], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
