@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AuthGuard } from './auth.guard';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
@@ -9,6 +10,7 @@ import { FashionComponent } from './fashion/fashion.component';
 import { SunglassesComponent } from './fashion/sunglasses/sunglasses.component';
 import { WalletsComponent } from './fashion/wallets/wallets.component';
 import { HomeComponent } from './home/home.component';
+import { LoginformComponent } from './loginform/loginform.component';
 import { OrderlistComponent } from './orders/orderlist/orderlist.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CameraComponent } from './product/camera/camera.component';
@@ -34,7 +36,7 @@ const routes: Routes = [
   { path: 'about-us', component: AboutusComponent },
   { path: 'contact-us', component: ContactusComponent },
   {
-    path: 'product', component: ProductComponent,
+    path: 'product', canActivate: [AuthGuard], component: ProductComponent,
     children: [
 
       { path: 'laptop', component: LaptopComponent },
@@ -58,7 +60,7 @@ const routes: Routes = [
   { path: 'users', component: UserComponent },
   { path: 'userdetails/:id', component: UserDetailsComponent },
   { path: 'userdata', component: UserDataComponent },
-  { path: 'login', component: TemplateformComponent },
+  { path: 'login', component: LoginformComponent },
   { path: 'order', component: OrderlistComponent },
 
   {
