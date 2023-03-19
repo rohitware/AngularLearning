@@ -1,0 +1,19 @@
+<input [(ngModel)]="search" type="text" name="search"> &nbsp;
+<button class="btn btn-primary" (click)="searchSpaces()"> Search </button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Title </th>
+            <th> WordCount </th>
+            <th> Snippet </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of searchResult">
+            <td> {{s.title}}</td>
+            <td> {{s.wordcount}}</td>
+            <td> {{s.snippet}}</td>
+        </tr>
+    </tbody>
+</table>

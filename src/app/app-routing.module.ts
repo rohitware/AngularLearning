@@ -28,6 +28,7 @@ import { TodoComponent } from './todo/todo.component';
 import { UserDataComponent } from './user-data/user-data.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserComponent } from './user/user.component';
+import { WikipediaComponent } from './wikipedia/wikipedia.component';
 
 
 const routes: Routes = [
@@ -76,7 +77,7 @@ const routes: Routes = [
   { path: 'customer', loadChildren: './customer/customer.module#CustomerModule' },
   { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
   { path: 'todo', component: TodoComponent },
-
+  { path: 'wikipedia', component: WikipediaComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

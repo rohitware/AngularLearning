@@ -77,6 +77,7 @@ import { FashionModule } from './fashion/fashion.module';
 import { TodoComponent } from './todo/todo.component'
 import { LoginformComponent } from './loginform/loginform.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { WikipediaComponent } from './wikipedia/wikipedia.component';
 
 
 @NgModule({
@@ -124,7 +125,8 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     UserDetailsComponent,
     UserDataComponent,
     TodoComponent,
-    LoginformComponent
+    LoginformComponent,
+    WikipediaComponent
   ],
   imports: [
     BrowserModule,
