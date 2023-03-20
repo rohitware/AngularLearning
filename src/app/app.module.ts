@@ -78,6 +78,7 @@ import { TodoComponent } from './todo/todo.component'
 import { LoginformComponent } from './loginform/loginform.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { WikipediaComponent } from './wikipedia/wikipedia.component';
+import { HooksComponent } from './hooks/hooks.component';
 
 
 @NgModule({
@@ -126,7 +127,8 @@ import { WikipediaComponent } from './wikipedia/wikipedia.component';
     UserDataComponent,
     TodoComponent,
     LoginformComponent,
-    WikipediaComponent
+    WikipediaComponent,
+    HooksComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,11 @@ import { MyserviceService } from './Services/myservice.service';
 })
 export class AppComponent implements OnInit {
     title = 'Angular App';
+    data = 0;
+
+    changeFromParrent(){
+      this.data +=1;
+    }
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');

@@ -137,6 +137,6 @@
   </nav>
 </div>
 <!-- The routed views render in the <router-outlet>-->
-
-
+<button class="btn btn-primary" (click)="changeFromParrent()"> Change From Parrent</button>
+  <app-hooks [parrentData]="data"></app-hooks>
 <router-outlet></router-outlet>
