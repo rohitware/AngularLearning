@@ -13,7 +13,7 @@
         <tr *ngFor="let s of searchResult">
             <td> {{s.title}}</td>
             <td> {{s.wordcount}}</td>
-            <td> {{s.snippet}}</td>
+            <td [innerHtml]="s.snippet"> {{s.snippet}}</td>
         </tr>
     </tbody>
 </table>
