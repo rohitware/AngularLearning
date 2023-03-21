@@ -9,12 +9,12 @@ import { MyserviceService } from './Services/myservice.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-    title = 'Angular App';
-    data = 0;
+  title = 'Angular App';
+  data: string = 'red';
 
-    changeFromParrent(){
-      this.data +=1;
-    }
+  changeFromParrent() {
+    this.data += 1;
+  }
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
@@ -65,5 +65,11 @@ export class AppComponent implements OnInit {
   //   console.log(val);
   // }
 
+
+  handleData(value) {
+
+    this.data = value.target.value;
+
+  }
 
 }
