@@ -140,9 +140,11 @@
 
 <input type="text" placeholder="Enter value" (blur)="handleData($event)">
 <!-- <button class="btn btn-primary" (click)="changeFromParrent()"> Change From Parrent</button> -->
-<app-hooks [parentData]="data">
+<app-hooks [parentData]="data" *ngIf="appchildExist">
   <h1 #child>
     this is child content comming from parent content.
   </h1>
 </app-hooks>
+<button class="btn btn-danger" (click)="OnDestroy()">OnDestroy</button>
+<br><br>
 <router-outlet></router-outlet>

@@ -11,13 +11,14 @@ import { MyserviceService } from './Services/myservice.service';
 export class AppComponent implements OnInit {
   title = 'Angular App';
   data: string = 'red';
+  appchildExist: boolean = true;
 
   changeFromParrent() {
     this.data += 1;
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
   // name: string = '';
 
@@ -67,9 +68,11 @@ export class AppComponent implements OnInit {
 
 
   handleData(value) {
-
     this.data = value.target.value;
+  }
 
+  OnDestroy() {
+    this.appchildExist = false;
   }
 
 }

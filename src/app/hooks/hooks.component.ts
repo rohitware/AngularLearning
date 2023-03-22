@@ -1,4 +1,5 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChange, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChange, SimpleChanges, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DemoService } from '../Services/demo.service';
 
 @Component({
@@ -6,14 +7,23 @@ import { DemoService } from '../Services/demo.service';
   templateUrl: './hooks.component.html',
   styleUrls: ['./hooks.component.css']
 })
-export class HooksComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
+export class HooksComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   @ContentChild("child", { static: false }) contentChild: ElementRef;
   @Input() parentData: string;
   @ViewChild("childhook", { static: false }) viewChild: ElementRef;
+  counter;
+  subscription: Subscription;
+  num: number = 1;
 
   constructor(private _demoService: DemoService) {
     console.log('HooksComponent constructor called');
   }
+  ngOnDestroy(): void {
+    console.log('HooksComponent ngOnDestroy called');
+    clearInterval(this.counter);
+    this.subscription.unsubscribe();
+  }
+
   ngAfterViewChecked(): void {
     console.log('HooksComponent ngAfterViewChecked called', this.viewChild);
     this.viewChild.nativeElement.setAttribute('style', `color: ${this.parentData}`);
@@ -40,9 +50,13 @@ export class HooksComponent implements OnChanges, OnInit, DoCheck, AfterContentI
   ngOnInit(): void {
     // use when we want to display, fetch data from API
     console.log(`HooksComponent ngOnInit Called.`);
-    this._demoService.getUsers().subscribe(res => {
-      console.log(`res from ngOnInit`, res);
-    })
+    this.subscription = this._demoService.getUsers().subscribe(res => {
+      console.log('users from hooks component', res);
+    });
+    this.counter = setInterval(() => {
+      this.num = this.num + 1;
+      console.log(this.num);
+    }, 1000)
   }
   // first call after constructor
   ngOnChanges(changes: SimpleChanges): void {
