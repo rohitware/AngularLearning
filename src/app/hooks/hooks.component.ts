@@ -53,10 +53,10 @@ export class HooksComponent implements OnChanges, OnInit, DoCheck, AfterContentI
     this.subscription = this._demoService.getUsers().subscribe(res => {
       console.log('users from hooks component', res);
     });
-    this.counter = setInterval(() => {
-      this.num = this.num + 1;
-      console.log(this.num);
-    }, 1000)
+    // this.counter = setInterval(() => {
+    //   this.num = this.num + 1;
+    //   console.log(this.num);
+    // }, 1000)
   }
   // first call after constructor
   ngOnChanges(changes: SimpleChanges): void {

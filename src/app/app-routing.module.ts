@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AdduserComponent } from './adduser/adduser.component';
 import { AuthGuard } from './auth.guard';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DemopostComponent } from './demopost/demopost.component';
@@ -18,6 +19,8 @@ import { LaptopComponent } from './product/laptop/laptop.component';
 import { MobileComponent } from './product/mobile/mobile.component';
 import { ProductComponent } from './product/product.component';
 import { WatchComponent } from './product/watch/watch.component';
+import { ResolveGuard } from './resolve.guard';
+import { UnsavedchangesGuard } from './unsavedchanges.guard';
 import { BatComponent } from './sports-equipment/bat/bat.component';
 import { CycleComponent } from './sports-equipment/cycle/cycle.component';
 import { DumbbellComponent } from './sports-equipment/dumbbell/dumbbell.component';
@@ -29,6 +32,7 @@ import { UserDataComponent } from './user-data/user-data.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserComponent } from './user/user.component';
 import { WikipediaComponent } from './wikipedia/wikipedia.component';
+import { UserDetailsAuthComponent } from './user-details-auth/user-details-auth.component';
 
 
 const routes: Routes = [
@@ -60,6 +64,11 @@ const routes: Routes = [
   { path: 'postdetails/:id', component: DemopostdetailsComponent },
   { path: 'users', component: UserComponent },
   { path: 'userdetails/:id', component: UserDetailsComponent },
+  {
+    path: 'userdetailsAuth', component: UserDetailsAuthComponent, resolve: {
+      data: ResolveGuard
+    }
+  },
   { path: 'userdata', component: UserDataComponent },
   { path: 'login', component: LoginformComponent },
   { path: 'order', component: OrderlistComponent },
@@ -78,6 +87,7 @@ const routes: Routes = [
   { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
   { path: 'todo', component: TodoComponent },
   { path: 'wikipedia', component: WikipediaComponent },
+  { path: 'adduser', component: AdduserComponent, canDeactivate: [UnsavedchangesGuard] },
   { path: '**', component: PageNotFoundComponent }
 ];
 
