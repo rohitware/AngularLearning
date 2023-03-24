@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { forkJoin, from, interval, of, timer } from 'rxjs';
-import { take, takeLast, takeUntil } from 'rxjs/operators';
+import { mergeMap, take, takeLast, takeUntil } from 'rxjs/operators';
 
 interface User {
   id: number;
@@ -35,8 +35,25 @@ export class RxjsComponent implements OnInit {
     })
   }
 
+  getData(data) {
+    return of(data + ' Video uploaded');
+  }
 
   ngOnInit() {
+
+    const obs1 = from(['Tech', 'Comedy', 'News']);
+
+    // obs1.pipe(
+    //   map(res => this.getData(res))
+    // ).subscribe(res => res.subscribe(res2 => {
+    //   console.log(res2);
+    // })); 
+
+    obs1.pipe(
+      mergeMap(res => this.getData(res))
+    ).subscribe(res => {
+      console.log(res);
+    })
 
     // of and from operators
     const ofObs = of([1, 2, 3]);
