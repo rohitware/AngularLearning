@@ -1,6 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { from, interval, of, timer } from 'rxjs';
+import { forkJoin, from, interval, of, timer } from 'rxjs';
 import { take, takeLast, takeUntil } from 'rxjs/operators';
+
+interface User {
+  id: number;
+}
+
+interface Post {
+  id: number;
+}
 
 @Component({
   selector: 'app-rxjs',
@@ -9,7 +18,23 @@ import { take, takeLast, takeUntil } from 'rxjs/operators';
 })
 export class RxjsComponent implements OnInit {
 
-  constructor() { }
+  USERS = 'https://jsonplaceholder.typicode.com/users';
+  POSTS = 'https://jsonplaceholder.typicode.com/posts';
+
+  data: [User[], Post[]];
+
+  constructor(http: HttpClient) {
+
+    const users = http.get<User[]>(this.USERS);
+
+    const posts = http.get<Post[]>(this.POSTS);
+
+    forkJoin([users, posts]).subscribe(res => {
+      this.data = res;
+      console.log('User and Posts data', res);
+    })
+  }
+
 
   ngOnInit() {
 
