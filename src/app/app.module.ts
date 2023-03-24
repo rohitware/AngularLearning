@@ -81,6 +81,7 @@ import { WikipediaComponent } from './wikipedia/wikipedia.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { UserDetailsAuthComponent } from './user-details-auth/user-details-auth.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -132,7 +133,8 @@ import { UserDetailsAuthComponent } from './user-details-auth/user-details-auth.
     WikipediaComponent,
     HooksComponent,
     AdduserComponent,
-    UserDetailsAuthComponent
+    UserDetailsAuthComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,

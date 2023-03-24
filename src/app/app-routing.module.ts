@@ -33,6 +33,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserComponent } from './user/user.component';
 import { WikipediaComponent } from './wikipedia/wikipedia.component';
 import { UserDetailsAuthComponent } from './user-details-auth/user-details-auth.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 const routes: Routes = [
@@ -88,6 +89,7 @@ const routes: Routes = [
   { path: 'todo', component: TodoComponent },
   { path: 'wikipedia', component: WikipediaComponent },
   { path: 'adduser', component: AdduserComponent, canDeactivate: [UnsavedchangesGuard] },
+  { path: 'rxjs', component: RxjsComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
