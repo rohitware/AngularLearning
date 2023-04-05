@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../Services/auth.service';
+// import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-loginform',
